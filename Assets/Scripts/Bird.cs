@@ -23,8 +23,7 @@ public class Bird : MonoBehaviour {
         }
         else if (collision.gameObject.name == "player")
         {
-            var tmp = collision.transform.GetComponent<Controller>();
-            tmp.notGo = true;
+            Destroy(this.gameObject);
         }
     }
 }
