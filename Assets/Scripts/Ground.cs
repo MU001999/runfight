@@ -19,9 +19,14 @@ public class Ground : MonoBehaviour {
         if (collision.gameObject.name == "player")
         {
             var tmp = collision.transform.GetComponent<Controller>();
+            var ani = collision.transform.GetComponent<Animator>();
             tmp.isGrounded = true;
             tmp.notGo = true;
             tmp.back = true;
+            ani.SetBool("isJumping", false);
+            ani.SetBool("isGoing", false);
+            ani.SetBool("isOning", false);
+            ani.SetBool("isAir", false);
         }
     }
 }

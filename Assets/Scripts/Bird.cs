@@ -6,7 +6,7 @@ public class Bird : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        this.name = "birds";
+        this.name = "bird";
 	}
 	
 	// Update is called once per frame
@@ -23,7 +23,13 @@ public class Bird : MonoBehaviour {
         }
         else if (collision.gameObject.name == "player")
         {
-            Destroy(this.gameObject);
+            var tmp = collision.gameObject.GetComponent<Controller>();
+            if (!tmp.back)
+            {
+                var ani = collision.transform.GetComponent<Animator>();
+                ani.SetBool("isOning", true);
+                Destroy(this.gameObject);
+            }
         }
     }
 }
