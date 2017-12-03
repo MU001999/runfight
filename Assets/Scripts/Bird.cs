@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bird : MonoBehaviour {
 
@@ -16,19 +17,19 @@ public class Bird : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name=="Pig")
+        if (collision.gameObject.name == "player")
         {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-        }
-        else if (collision.gameObject.name == "player")
-        {
-            var tmp = collision.gameObject.GetComponent<Controller>();
+            var tmp = collision.transform.GetComponent<Controller>();
             if (!tmp.back)
             {
                 var ani = collision.transform.GetComponent<Animator>();
                 ani.SetBool("isOning", true);
                 Destroy(this.gameObject);
+            }
+            else
+            {
+                SceneManager.UnloadSceneAsync("1");
+                SceneManager.LoadSceneAsync("Begin");
             }
         }
     }

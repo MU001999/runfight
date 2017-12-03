@@ -9,7 +9,7 @@ public class Controller : MonoBehaviour
     public Vector2 vel;
     public Vector2 pre;
     public Vector2 target;
-    public Transform pig;
+    public Transform pp;
     public Animator ani;
     public bool isGrounded;
     public bool notGo;
@@ -23,7 +23,6 @@ public class Controller : MonoBehaviour
         back = true;
         vel = new Vector2();
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.gravityScale = 10;
         ani = GetComponent<Animator>();
         this.name = "player";
     }
@@ -48,36 +47,33 @@ public class Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && back)
         {
             ani.SetBool("isRuning", true);
-            rb2d.velocity = new Vector2(-5F, rb2d.velocity.y);
-            //rb2d.AddForce(transform.right * -10);
-            //rb2d.MovePosition(new Vector2(rb2d.position.x - 10 * Time.deltaTime, rb2d.position.y));
+            rb2d.velocity = new Vector2(-8F, rb2d.velocity.y);
         }
         if (Input.GetKey(KeyCode.S) && back)
         {
             rb2d.AddForce(transform.up * -100);
-            //rb2d.MovePosition(new Vector2(rb2d.position.x, rb2d.position.y - 10 * Time.deltaTime));
         }
         if (Input.GetKey(KeyCode.D) && back)
         {
             ani.SetBool("isRuning", true);
-            rb2d.velocity = new Vector2(+5F, rb2d.velocity.y);
-            //rb2d.position = Vector2.SmoothDamp(rb2d.position, new Vector2(rb2d.position.x + 10, rb2d.position.y), ref vel, 1, 10, Time.fixedDeltaTime);
-            //rb2d.AddForce(transform.right * 10);
-            //rb2d.MovePosition(new Vector2(rb2d.position.x + 10 * Time.deltaTime, rb2d.position.y));
+            rb2d.velocity = new Vector2(+8F, rb2d.velocity.y);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && back)
         {
             ani.SetBool("isFighting", true);
-            Instantiate(pig, new Vector3(transform.position.x+10F, transform.position.y), transform.rotation);
+            Instantiate(pp, new Vector3(transform.position.x+4F, transform.position.y, transform.position.z), Quaternion.identity);
         }
         if (Input.GetMouseButtonDown(0) && notGo && !isGrounded && back)
         {
-            notGo = false;
-            back = false;
-            pre = rb2d.position;
-            ani.SetBool("isGoing", true);
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (target.x >= rb2d.position.x + 16F && target.y >= 2F)
+            {
+                notGo = false;
+                back = false;
+                pre = rb2d.position;
+                ani.SetBool("isGoing", true);
+            }
         }
         if (!notGo && !isGrounded)
         {
@@ -94,7 +90,7 @@ public class Controller : MonoBehaviour
             ani.SetBool("isGoing", false);
             ani.SetBool("isBacking", false);
         }
-        if (rb2d.position.x >= target.x-0.5)
+        if (rb2d.position.x >= target.x-1)
         {
             notGo = true;
         }
@@ -102,5 +98,6 @@ public class Controller : MonoBehaviour
         {
             ani.SetBool("isRuning", false);
         }
+        rb2d.gravityScale = back ? 10F : 0.01F;
     }
 }

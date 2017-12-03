@@ -6,13 +6,13 @@ public class CameraPlayer : MonoBehaviour
 {
 
     public GameObject player;
-    public float dir;
+    public Vector3 dir;
     public Vector3 vel;
 
 	// Use this for initialization
 	void Start ()
     {
-        dir = player.transform.position.x - transform.position.x;
+        dir = player.transform.position - transform.position;
     }
 	
 	// Update is called once per frame
@@ -20,7 +20,7 @@ public class CameraPlayer : MonoBehaviour
     {
         if (player.GetComponent<Controller>().back)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, new Vector3(player.transform.position.x - dir, transform.position.y, transform.position.z), ref vel, Time.deltaTime, 10, Time.deltaTime);
+            transform.position = Vector3.SmoothDamp(transform.position, player.transform.position - dir, ref vel, Time.deltaTime, 16, Time.deltaTime);
             //transform.position = new Vector3(player.transform.position.x - dir, transform.position.y, transform.position.z);
         }
 	}

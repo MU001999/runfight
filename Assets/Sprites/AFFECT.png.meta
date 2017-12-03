@@ -1,9 +1,21 @@
 fileFormatVersion: 2
 guid: 6c6d2444c1f9b08468d103525b4ecd49
-timeCreated: 1512042268
+timeCreated: 1512195579
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: AFFECT_0
+    21300002: AFFECT_1
+    21300004: AFFECT_2
+    21300006: AFFECT_3
+    21300008: AFFECT_4
+    21300010: AFFECT_5
+    21300012: AFFECT_6
+    21300014: AFFECT_7
+    21300016: AFFECT_8
+    21300018: AFFECT_9
+    21300020: AFFECT_10
+    21300022: AFFECT_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -65,9 +77,186 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: AFFECT_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 668
+        width: 490
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 114, z: 221, w: 84}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_1
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 698.6666
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 58, z: 0, w: 64}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_2
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 698.6666
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_3
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 698.6666
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 349.66666
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_5
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 349.66666
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_6
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 349.66666
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_7
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 349.66666
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.6666565
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_9
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0.6666565
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_10
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 0.6666565
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AFFECT_11
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 0.6666565
+        width: 262
+        height: 349.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
