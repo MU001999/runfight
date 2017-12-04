@@ -14,16 +14,13 @@ public class Pig : MonoBehaviour {
     }
     void Start () {
         this.name = "pig";
-        Destroy(this.gameObject, 1F);
+        Destroy(this.gameObject, 0.3F);
 	}
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         switch(collider.gameObject.name)
         {
-            case "player":
-                Destroy(this.gameObject);
-                break;
             case "bird":
                 Destroy(collider.gameObject);
                 Destroy(this.gameObject);

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class ExitBTN : MonoBehaviour {
+public class SetBTN : MonoBehaviour {
 
 	// Use this for initialization
 	void Start ()
@@ -11,9 +12,9 @@ public class ExitBTN : MonoBehaviour {
         Button btn = this.GetComponent<Button>();
         btn.onClick.AddListener(OnClick);
     }
-	
+
     private void OnClick()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Set");
     }
 }

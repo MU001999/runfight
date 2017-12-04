@@ -15,9 +15,13 @@ public class Controller : MonoBehaviour
     public bool notGo;
     public bool back;
 
+    private float lastTime, curTime;
+
     // Use this for initialization
     void Start()
     {
+        lastTime = Time.time;
+
         isGrounded = true;
         notGo = true;
         back = true;
@@ -30,6 +34,7 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        curTime = Time.time;
         transform.eulerAngles = new Vector3(0, 0, 0);
         if (Input.GetKeyDown(KeyCode.W) && isGrounded && back)
         {
@@ -59,10 +64,11 @@ public class Controller : MonoBehaviour
             rb2d.velocity = new Vector2(+8F, rb2d.velocity.y);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && back)
+        if (Input.GetKeyDown(KeyCode.Space) && back && curTime - lastTime >= 1)
         {
+            lastTime = curTime;
             ani.SetBool("isFighting", true);
-            Instantiate(pp, new Vector3(transform.position.x+4F, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(pp, new Vector3(transform.position.x+1F, transform.position.y, transform.position.z), Quaternion.identity);
         }
         if (Input.GetMouseButtonDown(0) && notGo && !isGrounded && back)
         {
